@@ -6,6 +6,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: Print variable
         run: echo ${{ vars.VERSION }}
