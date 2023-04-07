@@ -14,8 +14,10 @@ jobs:
       - name: Increment variable
         run: |
           IFS="," read -a version_array <<< ${{ vars.VERSION }}
+          echo ${version_array}
           (( ++version_array[2] ))
           next_version="${version_array[0]}.${version_array[1]}.${version_array[2]}"
+          echo ${next_version}
           echo "NEXT_VERSION=${next_version}" >> $GITHUB_ENV
         
       - name: Update variable
